@@ -7,7 +7,7 @@ https://aoj.anacnu.kr/problems/1212
 
 첫 번째 문제는 실버4 정도 수준의 이분탐색 문제였다.
 
-```
+```python
 import sys
 from bisect import bisect_left, bisect_right
 
@@ -30,8 +30,8 @@ for r in result:
 
 import sys, 이분탐색까지 신경써서 했는데
 
-```
+```python
 for r in result:
-  print(r)
+    print(r)
 ```
 부분에서 런타임에러가 생긴 거 같다.
