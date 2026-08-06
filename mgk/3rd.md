@@ -93,3 +93,144 @@
 - 독립적인 두 개의 네트워크 경로 (네트워크 연결하는 카드가 두 개)
 - 하나가 고장나도 다른 하나가 네트워크 연결을 계속 유지
 - 목적 : 인터넷/네트워크 연결이 끊기지 않게!
+
+<img width="695" height="304" alt="image" src="https://github.com/user-attachments/assets/42921861-7993-4f98-b1ff-cd26857c5296" />
+
+**HBA 이중화 (Host Bus Adapter)**
+
+- 서버와 스토리지를 연결하는 어댑터를 2개 씀
+- 하나가 고장나도 다른 경로로 스토리지에 계속 접근 가능
+- 목적 : 저장장치 연결이 끊기지 않게!
+
+<img width="694" height="357" alt="image" src="https://github.com/user-attachments/assets/75ea1be2-1d88-4dc0-b8db-b5a12f1a6f1d" />
+
+**서버 이중화(Server)**
+
+- 서버 자체를 2대 병렬로 운영
+- 한 서버가 죽으면 다른 서버가 그 역할을 바로 이어받음
+- 목적 : 단일 지점 장애 (SPOF, 한 곳 고장으로 전체가 멈추는 것)를 막음
+
+⇒ 공통 원리 : NIC → HBA → 서버 순으로, 범위가 점점 커지면서 똑같이 하나가 죽어도 나머지가 살아있게 하는 식
+
+⇒ **이중화 :** 고가용성을 만드는 방법 중 하나
+
+고가용성 (High Availability, HA) : 시스템이 지속적으로 가용하고 신뢰성 있게 능력
+
+- 시스템의 장애나 중단에 복구력을 갖춤
+- 사용자에게 끊김 없는 서비스를 제공함
+
+<img width="698" height="369" alt="image" src="https://github.com/user-attachments/assets/1e2aab03-090b-4224-acda-41596ad93189" />
+
+**장애 허용 클러스터링 (Fault-Tolerant Clustering) :**
+
+- 여러 대의 서버를 하나의 팀(클러스터)으로 묶음
+- 한 서버가 죽으면 다른 서버가 그 역할을 자동으로 대신함
+- 클러스터링 소프트웨어가 이 “장애감지 → 자동 이전”을 관리
+
+**로드 밸런싱과 스케일 아웃 :**
+
+- 로드 밸런싱 : 트래픽(요청량)을 여러 서버에 골고루 분산해서, 한 서버만 과부하 걸리지 않게 함
+- 스케일 아웃 : 트래픽이 늘어나면 서버를 더 추가해서 대응함
+- 로드 밸런싱은 이미 여러 개 열어놔서 분산시키는 거고, 스케일아웃은 트래픽이 늘어나면 그 때 돼서 추가하는 것
+
+<img width="692" height="364" alt="image" src="https://github.com/user-attachments/assets/642acda2-7f48-4ed1-8c57-87aa1f9fe601" />
+
+- 고가용성 클러스터 : DB 서버 하나 죽어도 나머지가 서비스 계속
+- 부하분산 클러스터 : 웹 트래픽을 4대 서버로 분산
+- 고성능 클러스터 : 여러 노드가 힘을 합쳐 연산 처리
+
+**5. DR**
+
+**DR (Disaster Recovery) :** 시스템이나 데이터가 재해 (자연재해, 인간 오류, 사이버 공격 등) 로 손상됐을 때, 복구해서 다시 운영 가능한 상태로 되돌리는 절차와 계획 
+
+목표 : 비즈니스 연속성 유지 + 중단 시간 최소화
+
+<img width="668" height="374" alt="image" src="https://github.com/user-attachments/assets/fc02534e-118b-4e63-9bcf-6b06f7a527d0" />
+
+**DR 계획에 들어가는 요소 :**
+
+1. 정기적인 백업과 데이터 복제로 데이터 보호
+2. 비상 대응팀 구성 + 역할/책임 명확화
+3. 재해 시 쓸 대체 인프라/시설 준비
+4. 정기적인 DR 계획 테스트 + 직원 교육
+
+**DR 계획 :** 
+
+- 조직의 비즈니스 요구사항과 리스크 프로파일에 맞게 구성
+- 주기적 검토 및 업데이트
+
+**6. VDI**
+
+<img width="699" height="382" alt="image" src="https://github.com/user-attachments/assets/c0f4109e-e81a-4318-b655-9eb2d2cf7a87" />
+
+사용자의 데스크톱 환경을 가상화해서 중앙 서버에서 실행하고, 그 화면만 내 노트북/PC(클라이언트)로 전송해주는 기술
+
+사용자는 로그인만 하고, 실제 연산은 서버에서 다 이뤄짐
+
+**VDI 장점 :**
+
+1. **액세스 가능성 :** 인터넷이 연결됨 → 가상 데스크톱에 액세스 가능함
+2. **보안 :** 중앙 집중식 데이터 저장소, 암호화된 통신
+3. **자원 효율성 :** 물리적 서버 자원을 효율적으로 활용하여 여러 사용자가 하나의 서버에서 작동 가능
+4. **관리 용이성 :** 중앙 집중식 관리
+5. **비용 절감**
+
+<img width="690" height="378" alt="image" src="https://github.com/user-attachments/assets/b91ba803-1021-4359-bac2-c55ef857d2b8" />
+
+**CJ그룹 VDI 서비스 사례**
+
+3가지 핵심 가치:
+
+- **① 업무 연속성**: 내부망(본사, 사내) + 외부망(재택, 해외)에서 어디서든 VPN 타고 접속
+- **② 보안 강화**: VDI 인프라 안에 스토리지(OS/사용자 데이터 저장 영역, 백업 영역)를 두고, DDoS·방화벽·IPS 같은 보안 장비로 계속 감시
+- **③ 사용자 편의성**: 로그인만 하면 O/A 문서작업, 엑셀, 인트라넷, ERP 등 회사 업무 환경을 그대로 씀
+
+흐름: **사용자(내부/외부) → VDI Portal(로그인) → 사용자 VD환경(Windows 운영체제 실행) → VDI인프라(관리서버, 스토리지) → 최종적으로 사용자 업무환경 화면만 전송**
+
+### 컴퓨터 네트워크 (Computer network)
+컴퓨터들 간 정보 또는 데이터를 전달하기 위해 컴퓨터들을 서로 연결한 것, 컴퓨터 연결에 대해 연구하는 분야
+
+<img width="695" height="384" alt="image" src="https://github.com/user-attachments/assets/0e66c512-8524-4691-8596-046fc2792547" />
+
+<img width="691" height="380" alt="image" src="https://github.com/user-attachments/assets/89f0287b-b5fd-45ab-962a-327026f29dd1" />
+
+**범위에 따른 구분**
+
+- **LAN (Local Area Network) :** 일정 지역 내 (건물, 사무실) 근거리 통신망, 구내정보통신
+- **WAN (Wide Area Network) :** 거리 제한 없는 원거리 통신망. 광역통신망
+
+**네트워크 장치 (라우터 vs 스위치)**
+
+<img width="694" height="380" alt="image" src="https://github.com/user-attachments/assets/cea3da75-cfce-43a4-a47b-e3f660bd9748" />
+
+<img width="695" height="386" alt="image" src="https://github.com/user-attachments/assets/6f577f1b-5be1-47ec-80d3-ab2b282e451c" />
+
+역할 : 목적지로 가는 적합한 경로를 찾아주는 장치
+
+계층 : L3(네트워크 계층) 소속, **IP 주소 기반**으로 장치 위치 파악하고 통신
+
+핵심 기능 : 
+
+- 서로 다른 네트워크 (LAN-LAN, LAN-WAN) 를 연결함.
+- 브로드캐스트 도메인을 구분해서 나눠줌
+
+<img width="695" height="387" alt="image" src="https://github.com/user-attachments/assets/5d1dc088-64ae-4d4f-8605-f14d080c320c" />
+
+<img width="698" height="386" alt="image" src="https://github.com/user-attachments/assets/ea004f61-c3f8-47be-969d-6cb92cca3c59" />
+
+역할 : 소규모 네트워크 안에서 여러 디바이스를 서로 연결해서 자원 공유하게 함
+
+계층 : L2(데이터 링크 계층) 소속, **MAC 주소 기반**으로 디바이스 위치 파악
+
+한계 : 브로드캐스트 도메인을 구분 못함 
+(목적지 불분명하면 모든 포트로 다 뿌림 = 브로드캐스트)
+
+**데이터 통신**
+
+<img width="691" height="385" alt="image" src="https://github.com/user-attachments/assets/c656d4ae-5266-4a3c-9568-a89510ec71f8" />
+
+⇒ 개방형 시스템 상호 연결 모델의 표준
+
+컴퓨터 회사마다 통신 규격이 제각각이면 서로 연결이 안 되는 문제(호환성 문제)가 생기니까, ISO가 데이터 통신 규격과 프로토콜을 통일하기 위해 만든 참조 모델임.
+
+<img width="694" height="350" alt="image" src="https://github.com/user-attachments/assets/cb096cea-2857-4247-a9d5-eb5dfa729d0d" />
