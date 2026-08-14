@@ -16,3 +16,9 @@ aoj에서 이분탐색 알고리즘에 대한 문제들을 풀고 이에 대한 
 인턴십 시험 준비를 위해 Infra, Network 분야의 개념 정리를 하기로 했다.
 
 <img width="852" height="604" alt="image" src="https://github.com/user-attachments/assets/51cf6522-cb1c-471a-93ce-441fa9c130fa" />
+
+### 4회차. 26.08.13(목)
+교육형 인턴십에서 제공하는 다양한 DX 개념들을 공부하고, 이 중 Cloud 개념을 정리하는 것을 이번 4회차 모각코의 목표로 삼는다.
+
+<img width="963" height="794" alt="image" src="https://github.com/user-attachments/assets/74a1b2d9-2f4f-4c59-ac60-266b8993ba68" />
+
