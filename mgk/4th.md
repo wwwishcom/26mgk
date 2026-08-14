@@ -1,4 +1,5 @@
-#
+# 4회차. 26.08.13(목)
+### DX - Cloud
 교육형 인턴십에서 제공하는 다양한 DX 개념들을 공부하고, 이에 대해 정리하는 것을 이번 4회차 모각코의 목표로 삼는다.
 
 <img width="698" height="383" alt="image" src="https://github.com/user-attachments/assets/c1936894-9c16-4d2f-9d37-843cfbd7efd1" />
